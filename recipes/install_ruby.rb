@@ -1,10 +1,10 @@
 id = 'themis-finals-utils'
 
-h = ::ChefCookbook::Instance::Helper.new(node)
+instance = ::ChefCookbook::Instance::Helper.new(node)
 
 node.default['rbenv']['group_users'] = [
-  h.root_user,
-  h.instance_user
+  instance.root,
+  instance.user
 ]
 
 include_recipe 'rbenv::default'
